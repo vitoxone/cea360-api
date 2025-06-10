@@ -1,0 +1,56 @@
+cea360/
+│
+├── app/                          # Módulo principal del sistema
+│   ├── main.py                  # Punto de entrada de FastAPI
+│   ├── core/                    # Configuraciones generales (CORS, settings, DB, etc.)
+│   │   ├── config.py            # Variables de entorno y settings
+│   │   ├── database.py          # Conexión a la base de datos
+│   │   └── security.py          # JWT, tokens, hashing (futuro)
+│   │
+│   ├── models/                  # Modelos SQLAlchemy
+│   │   ├── training.py
+│   │   ├── asset.py
+│   │   ├── code.py
+│   │   ├── access_log.py
+│   │   └── __init__.py
+│   │
+│   ├── schemas/                 # Esquemas Pydantic (input/output)
+│   │   ├── training.py
+│   │   ├── asset.py
+│   │   ├── code.py
+│   │   ├── access_log.py
+│   │   └── __init__.py
+│   │
+│   ├── crud/                    # Operaciones de base de datos
+│   │   ├── training.py
+│   │   ├── code.py
+│   │   ├── access.py
+│   │   └── __init__.py
+│   │
+│   ├── services/                # Lógica de negocio adicional
+│   │   ├── training.py
+│   │   ├── code_validator.py
+│   │   └── __init__.py
+│   │
+│   ├── routes/                  # Endpoints organizados por entidad
+│   │   ├── training.py
+│   │   ├── code.py
+│   │   ├── access_log.py
+│   │   └── __init__.py
+│   │
+│   └── utils/                   # Utilidades auxiliares
+│       ├── email.py             # (opcional para capturar emails de descargas)
+│       ├── strings.py
+│       └── __init__.py
+│
+├── tests/                       # Test unitarios y de integración
+│   ├── test_training.py
+│   ├── test_code_access.py
+│   └── __init__.py
+│
+├── alembic/                     # Migraciones de base de datos (opcional con Alembic)
+│
+├── .env                         # Variables de entorno
+├── requirements.txt             # Dependencias
+├── README.md
+└── pyproject.toml               # (si usas Poetry)
